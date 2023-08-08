@@ -39,3 +39,15 @@
 .credits__link:focus {
     color: #fff;
 }
+@media screen and (max-width: 1919px) {
+    .search__input{
+        width: 229px;
+        height: 40px;
+    }
+}
+@media screen and (max-width: 1939px) {
+    .search__input{
+        width: 142px;
+        height: 25px;
+    }
+}

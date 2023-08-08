@@ -24,4 +24,11 @@ const StyledButtons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 1919px) {
+    width: 150px;
+    height: 50px;
+  }
+  @media screen and (max-width: 1039px) {
+    display: none;
+  }
 `

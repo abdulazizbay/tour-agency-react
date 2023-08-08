@@ -21,10 +21,6 @@ export const Navbar=()=>{
                         <input className="search__input" type="text" placeholder="Search..."/>
                     </div>
                 </div>
-
-
-
-
                 <div className="social-container">
                     <ul>
                         {ListToggle.map((toggle)=>{
@@ -91,5 +87,59 @@ const StyledNavbar = styled.div`
     }
     
   }
+  @media screen and (max-width: 1919px) {
+    .learn-about-container{
+      ul{
+        padding: 15px 0 0 60px;
+      }
+      .search__container{
+        padding-left: 50px;
+      }
+    }
+  }
+  .social-container{
+    padding: 0 63.2px 0 45px;
+    ul{
+      padding: 13px;
+      img{
+        width: 90%;
+      }
+    }
+    .explore-toggle{
+      padding-top: 4px;
+    }
+    
+  }
+
+  @media screen and (max-width: 1439px) {
+    .social-container {
+      display: none;
+    }
+
+    .learn-about-container {
+      display: grid;
+      grid-column: 2;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0 0 20px;
+
+      ul {
+        padding: 0;
+        font-size: 12px;
+        flex-wrap: wrap;
+      }
+      .search__container{
+        display: none;
+      }
+      
+    }
+  }
+\` ;
+
+
+
+
+
+
   
 `

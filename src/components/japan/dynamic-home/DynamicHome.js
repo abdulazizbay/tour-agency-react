@@ -25,13 +25,14 @@ export const DynamicHome = (props) => {
 }
 
 const StyledDynamicHome = styled.div`
+  
   background:  center/cover url(${props=>props.backgroundImg}) no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 306px 0 45px 0;
+  padding: 300px 0 45px 0;
   .big-text-red{
     img{
       max-width: 742px;
@@ -39,7 +40,7 @@ const StyledDynamicHome = styled.div`
     }
   }
   .option-set {
-    padding: 0 150px;
+    //padding: 0 150px;
     display: flex;
     flex-direction: row;
     gap: 300px;
@@ -60,5 +61,59 @@ const StyledDynamicHome = styled.div`
       
     }
   }
-`;
+  @media screen and (max-width: 1919px) {
+    padding: 200px 0 20px 0 ;
+    .big-text-red{
+      img{
+        max-width: 450px ;
+        max-height: 200px;
+      }
 
+    }
+    
+  .option-set {
+    gap: 220px;
+    .option{
+      img{
+        width: 140px;
+        height: 140px;
+      }
+    }
+    
+
+  }
+  }
+
+  @media screen and (max-width: 1439px) {
+    padding: 240px 0 50px 0;
+
+    .big-text-red {
+      img {
+        max-width: 220px;
+        max-height: 120px;
+      }
+    }
+
+    .option-set {
+      gap: 0;
+      flex-wrap: wrap;
+
+      .option {
+        width: 50%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        img {
+          width: 100px;
+          height: 100px;
+          margin: 20px 0 0 5px;
+        }
+
+        .text-option {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+`;
