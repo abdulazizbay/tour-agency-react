@@ -7,13 +7,14 @@ export const DynamicHome = (props) => {
                         <img src={props.textImg} onClick={() => props.onImageChange(props.textImg)} />
                     </div>
 
-                <div className="option-set">
+                <div className="option-set" data-aos="fade-up">
                     {props.option.map((option, index) => (
                         <div className="option" key={option}>
                             <img
                                 src={props.smallImg[index]}
                                 alt={option}
                                 onClick={() => props.onImageChange(props.smallImg[index])}
+
                             />
                             <div className='text-option'>{option}</div>
                         </div>

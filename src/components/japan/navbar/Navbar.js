@@ -1,4 +1,4 @@
-import React  from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import "./searchButton.css"
 import fk from "../../../assets/facebook.png"
@@ -7,24 +7,39 @@ import ins from "../../../assets/instagram.png"
 import tch from "../../../assets/twitch.png"
 import {Buttons} from "../button/Buttons"
 export const Navbar=()=>{
-    const ListToggle = [yt, tch, fk, ins]
+    const ListToggle = [
+        yt, tch, fk, ins
+    ]
+    const [learnList,setLearnList] = useState([
+        {text:"HOMETALES OF JAPAN",linkTo:""},
+        {text:"DESTNATIONS",linkTo:""},
+        {text:"EXPERIECES",linkTo:""},
+    ])
+    const [searchValue,setSearchValue] = useState("")
+    useEffect(() => {
+        console.log(searchValue)
+    }, [searchValue]    );
     return (
         <>
-            <StyledNavbar>
+            <StyledNavbar >
                 <div className="learn-about-container">
                     <ul>
-                        <li>HOMETALES OF JAPAN</li>
-                        <li>DESTNATIONS</li>
-                        <li>EXPERIECES</li>
+                        {learnList.map(({text,linkTo}, index) => (
+                            <li key={index}><a href={linkTo}>{text}</a> </li>
+                        ))}
                     </ul>
                     <div className="search__container">
-                        <input className="search__input" type="text" placeholder="Search..."/>
+                        <input className="search__input"
+                               type="text"
+                               placeholder="Search..."
+                               value={searchValue}
+                               onChange={(e)=>setSearchValue(e.target.value)}/>
                     </div>
                 </div>
                 <div className="social-container">
                     <ul>
                         {ListToggle.map((toggle)=>{
-                            return <li><img src={toggle}/></li>
+                            return <li><img src={toggle} alt="social"/></li>
                         })}
 
                     </ul>
